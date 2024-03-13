@@ -25,7 +25,7 @@ public class LoginPage {
 
     @FindBy(xpath = "//span[@class='title']")
     private WebElement labelProduct;
-
+//setup method
     public void inputFieldUserName(String userName){
         fieldUserName.sendKeys(userName);
     }
@@ -37,5 +37,11 @@ public class LoginPage {
     }
     public boolean verifiyLabelProduct(){
         return labelProduct.isDisplayed();
+    }
+    public boolean verifyLoginPage(){
+        boolean a = fieldUserName.isDisplayed();
+        boolean b = fieldPassword.isDisplayed();
+        boolean c = buttonLogin.isDisplayed();
+        return a && b && c;
     }
 }
