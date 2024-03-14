@@ -25,6 +25,9 @@ public class LoginPage {
 
     @FindBy(xpath = "//span[@class='title']")
     private WebElement labelProduct;
+
+    @FindBy(xpath = "//h3")
+    private WebElement errorMesage;
 //setup method
     public void inputFieldUserName(String userName){
         fieldUserName.sendKeys(userName);
@@ -43,5 +46,8 @@ public class LoginPage {
         boolean b = fieldPassword.isDisplayed();
         boolean c = buttonLogin.isDisplayed();
         return a && b && c;
+    }
+    public String getErrorMessage(){
+        return errorMesage.getText();
     }
 }

@@ -29,4 +29,8 @@ public class LoginSteps {
         Assert.assertTrue(loginPage.verifiyLabelProduct());
     }
 
+    @Then("User see {string} as error text")
+    public void userSeeAsErrorText(String text) {
+        Assert.assertEquals(text, loginPage.getErrorMessage());
+    }
 }
