@@ -1,5 +1,6 @@
 package org.example.PageObject;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,5 +26,9 @@ public class InventoryPage {
     }
     public void clickProductSauceJacket(){
         productSauceJacket.click();
+    }
+    public void clickAddToCartItem(String item){
+        String button = "//div[text()='" + item + "']/ancestor::div[@class='inventory_item_description']//button[text()='Add to cart']";
+        webDriver.findElement(By.xpath(button)).click();
     }
 }

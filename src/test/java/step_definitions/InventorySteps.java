@@ -24,4 +24,8 @@ public class InventorySteps {
     }
 
 
+    @And("User add to click button add to cart item {string}")
+    public void userAddToClickButtonAddToCartItem(String item) {
+        inventoryPage.clickAddToCartItem(item);
+    }
 }
